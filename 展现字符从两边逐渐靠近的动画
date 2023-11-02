@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<windows.h>
+int main()
+{
+	char arr1[] = { "#######################" };
+	char arr2[] = { "hello,welcome to erciy." };
+	int sz = sizeof(arr1) / sizeof(arr1[0]);
+	int left = 0;
+	int right = sz - 2;
+	while (right >= left)
+	{
+		arr1[left] = arr2[left];
+		arr1[right] = arr2[right];
+		left++;
+		right--;
+		printf("%s\n", arr1);
+		Sleep (1000);//1000指1000ms，即1s，此函数意思为暂停1s再继续。S必须为大写
+		system("cls");//系统执行命令--cls清空屏幕
+	}
+	printf("%s", arr1);
+
+	return 0;
+}
